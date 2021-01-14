@@ -1,4 +1,7 @@
 /* Stylesheet -- index.htm */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;   
@@ -15,25 +18,52 @@ a {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    min-height: 50px;
+    max-height: 100px;
+    width: 100%;
+    background-color: black;
+    font-size: xx-large;
+    transition: all .2s ease;
+}
+
+header.scrolled {
+    font-size: large;
+}
+
+.navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-top: 1vh;
-    min-height: 5vh;
+    padding: 2vw;
 }
 
-#header-links a {
+.navbar-links{
+}
+
+.navbar-links a {
     padding-left: 2vw;
 }
 
-#main-content {
+.main-content {
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#main-content .content-section {
-    max-width: 80vw;
+.main-content .content-section {
+    max-width: 40vw;
+}
+
+.anchor {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-content .content-section{
+        max-width: 80vw;
+    }
 }
