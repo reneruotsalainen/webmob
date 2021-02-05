@@ -1,35 +1,40 @@
 /* Stylesheet -- index.htm */
+
 html {
     scroll-behavior: smooth;
     overflow-y: scroll;
+    --primary-color: #121212;
+    --secondary-color: #181818;
+    --primary-accent-color: rgb(44, 44, 238);
+    --secondary-accent-color: rgb(60, 60, 235);
+    --text-color: #cdcdcd;
 
 }
 
 body {
     margin: 0;   
     padding: 0;
-    background-color: white;
-    color: black;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     min-height: 50px;
     width: 100%;
-    background-color: white;
-    font-size: large;
+    background-color: var(--primary-color);
+    font-size: medium;
     text-transform: uppercase;
     z-index: 1;
 }
 
+header a {
+    text-decoration: none;
+    color: var(--primary-accent-color);
+    font-weight: bold;
+}
 
 .navbar {
     display: flex;
@@ -42,9 +47,10 @@ header {
     padding-right: 10px;
 }
 
+
 .navbar-links{
     display: flex;
-    width: 25%;
+    width: 40%;
     justify-content: space-between;
     align-items: center;
     padding-right: 2vw;
@@ -52,6 +58,11 @@ header {
 }
 
 .navbar-links a {
+
+}
+
+.navbar-links a:hover{
+    color: var(--secondary-accent-color);
 }
 
 .main-content {
@@ -64,7 +75,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 100px;
     
 }
 
@@ -74,26 +85,27 @@ header {
     flex-direction: column;
     align-items: center;
     max-width: 60vw;
+    padding: 40px;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    border: 1px none black; /* border setting for content */
-    padding: 10px;
     flex-grow: 1;
-    overflow-x: hidden;
-    background: rgba(255, 255, 255, .5);
-    border-radius: 10px;
 }
 
 .landing {
-    background: rgb(240, 240, 240);
+    background: var(--secondary-color);
 }
 
 .intro {
-    background: white;
+    background: var(--primary-color);
 }
 
 .history {
-    background:rgb(240, 240, 240);
+    background:var(--secondary-color);
+}
+
+.history .content-section {
+    right: 10vw;
+    width: 45vw;
 }
 
 
@@ -103,13 +115,12 @@ header {
     max-height: 100vh;
     max-width: 99vw;
     opacity: .5;
-    justify-self: center;
-
+    left: 0;
 
 }
 
 .distros {
-    background: white;
+    background: rgb(240,240,240);
 }
 
 .img {
@@ -129,6 +140,7 @@ header {
     background-color: lightslategray;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 
