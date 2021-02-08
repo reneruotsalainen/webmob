@@ -5,6 +5,7 @@ html {
     overflow-y: scroll;
     --primary-color: #121212;
     --secondary-color: #181818;
+    --opaque-secondary-color: #18181888;
     --primary-accent-color: rgb(44, 44, 238);
     --secondary-accent-color: rgb(60, 60, 235);
     --text-color: #cdcdcd;
@@ -50,7 +51,7 @@ header a {
 
 .navbar-links{
     display: flex;
-    width: 40%;
+    width: 30%;
     justify-content: space-between;
     align-items: center;
     padding-right: 2vw;
@@ -58,11 +59,17 @@ header a {
 }
 
 .navbar-links a {
-
+    padding: 10px;
+    background-color: var(--primary-accent-color);
+    border-radius: 5px;
+    color: var(--text-color);
 }
 
 .navbar-links a:hover{
-    color: var(--secondary-accent-color);
+    background-color: var(--secondary-accent-color);
+}
+
+.icon {
 }
 
 .main-content {
@@ -74,9 +81,7 @@ header a {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    
+    align-items: center;    
 }
 
 .content-section {
@@ -85,14 +90,16 @@ header a {
     flex-direction: column;
     align-items: center;
     max-width: 60vw;
-    padding: 40px;
+    padding: 20px;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    flex-grow: 1;
+    background-color: var(--opaque-secondary-color);
+    border-radius: 5px 20px 5px 20px;
 }
 
+
 .landing {
-    background: var(--secondary-color);
+    background: var(--primary-color);
 }
 
 .intro {
@@ -100,13 +107,10 @@ header a {
 }
 
 .history {
-    background:var(--secondary-color);
+    background:var(--primary-color);
 }
 
-.history .content-section {
-    right: 10vw;
-    width: 45vw;
-}
+
 
 
 .history-bg-img {
@@ -120,7 +124,13 @@ header a {
 }
 
 .distros {
-    background: rgb(240,240,240);
+    background: var(--primary-color);
+}
+
+.hr {
+    background-color: var(--opaque-secondary-color);
+    border: 0 none;
+    height: 2px;
 }
 
 .img {
@@ -143,14 +153,28 @@ header a {
     border-radius: 5px;
 }
 
+@media only screen and (min-width: 769px) {
+    .history .content-section {
+        right: 10vw;
+        width: 45vw;
+    }
+    .page {
+        padding-top: 100px;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     .navbar-links{
-        width: 60%;
+        width: 70%;
         padding-right: 4vw;
         padding-left: 4vw;
     }
+
     .content-section {
         max-width: 80vw;
+    }
+
+    .page {
+        padding-top: 50px;
     }
 }
