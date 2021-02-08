@@ -3,20 +3,20 @@
 html {
     scroll-behavior: smooth;
     overflow-y: scroll;
-    --primary-color: #121212;
-    --secondary-color: #181818;
-    --opaque-secondary-color: #18181888;
-    --primary-accent-color: rgb(44, 44, 238);
-    --secondary-accent-color: rgb(60, 60, 235);
-    --text-color: #cdcdcd;
+    --primary: white;
+    --secondary: #cdcdcd;
+    --primary-accent: #53c73e;
+    --secondary-accent: #4cb43a;
+    --text-light: #cdcdcd;
+    --text-dark: black;
 
 }
 
 body {
     margin: 0;   
     padding: 0;
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--primary);
+    color: var(--text-light);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -25,7 +25,8 @@ header {
     top: 0;
     min-height: 50px;
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
+    color: var(--text-dark);
     font-size: medium;
     text-transform: uppercase;
     z-index: 1;
@@ -33,7 +34,6 @@ header {
 
 header a {
     text-decoration: none;
-    color: var(--primary-accent-color);
     font-weight: bold;
 }
 
@@ -44,8 +44,6 @@ header a {
 }
 
 .name-container {
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 
@@ -59,15 +57,11 @@ header a {
 }
 
 .navbar-links a {
-    padding: 10px;
-    background-color: var(--primary-accent-color);
+    padding: 5px;
     border-radius: 5px;
-    color: var(--text-color);
+    color: var(--text-dark);
 }
 
-.navbar-links a:hover{
-    background-color: var(--secondary-accent-color);
-}
 
 .icon {
 }
@@ -111,8 +105,6 @@ header a {
 }
 
 
-
-
 .history-bg-img {
     position: absolute;
     overflow-x:hidden;
@@ -128,7 +120,6 @@ header a {
 }
 
 .hr {
-    background-color: var(--opaque-secondary-color);
     border: 0 none;
     height: 2px;
 }
@@ -154,12 +145,28 @@ header a {
 }
 
 @media only screen and (min-width: 769px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 100px;
+    }
+    
+    .name-container {
+        padding-left: 100px;
+    }
+
     .history .content-section {
         right: 10vw;
         width: 45vw;
     }
     .page {
         padding-top: 100px;
+    }
+
+    .navbar-links a:hover{
+        background-color: var(--primary-accent);
+        color: var(--text-light);
     }
 }
 
@@ -169,6 +176,9 @@ header a {
         padding-right: 4vw;
         padding-left: 4vw;
     }
+    .name-container {
+        padding-left: 10px;
+    }
 
     .content-section {
         max-width: 80vw;
@@ -176,5 +186,9 @@ header a {
 
     .page {
         padding-top: 50px;
+    }
+
+    .back-to-top {
+        bottom: 60px;
     }
 }
