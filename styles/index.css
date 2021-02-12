@@ -116,7 +116,7 @@ header a {
 .landing .headline {
     font-family: 'Raleway', sans-serif;
     font-size: 5vh;
-    font-weight: 100;
+    font-weight: 400;
     color: --var(--text-light);
     text-shadow: 2px 2px 4px black;
 }
@@ -168,7 +168,7 @@ header a {
 }
 
 .distro-logo {
-    height: 100px;
+    height: 50px;
 }
 
 footer {
@@ -180,6 +180,23 @@ footer {
     background-color: var(--secondary);
     bottom: 0;
     right: 0;
+}
+
+.socials {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.socials a {
+    padding: 4px;
+    border-radius: 50%;
+    height: 32px;
+}
+
+.socials a:hover {
+    background-color: var(--primary);
 }
 
 
@@ -219,8 +236,8 @@ footer {
     }
 
     .embedded-yt-vid {
-        width: 640px;
-        height: 360px;
+        width: 480px;
+        height: 270px;
     }
 
     .history .content-section {
