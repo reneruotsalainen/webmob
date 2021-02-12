@@ -2,14 +2,15 @@ const navBar = document.querySelector("header");
 const top_button = document.getElementById("b2t");
 
 // navibar links
-const link1 = document.getElementById("intro-link");
-const link2 = document.getElementById("history-link");
-const link3 = document.getElementById("distros-link");
+const link0 = document.getElementById("intro-link");
+const link1 = document.getElementById("history-link");
+const link2 = document.getElementById("distros-link");
 
 // colors
-
-const accent_color = "#53c73e"
+const color = "#cdcdcd"
  
+// a little pixel buffer for link highlight
+const buffer = 10
 
 document.onscroll = function() {scroll()}
 
@@ -22,38 +23,57 @@ function scroll() {
     }
 
 
-    if ((document.documentElement.scrollTop > document.documentElement.clientHeight && document.documentElement.scrollTop < document.documentElement.clientHeight*2) || (document.body.scrollTop > document.body.clientHeight && document.body.scrollTop < document.body.clientHeight*2)) {
-        link1.style.backgroundColor = accent_color;
-        link1.style.color = "white";
-        link2.style.backgroundColor = "";
-        link2.style.color = "black";
-        link3.style.backgroundColor = "";
-        link3.style.color = "black";
+    if ((document.documentElement.scrollTop >= document.documentElement.clientHeight - buffer && document.documentElement.scrollTop < document.documentElement.clientHeight*2 - buffer) || (document.body.scrollTop > document.body.clientHeight - buffer && document.body.scrollTop < document.body.clientHeight*2 - buffer)) {
+        setLinkColors(0);
     }
-    else if ((document.documentElement.scrollTop > document.documentElement.clientHeight *2 && document.documentElement.scrollTop < document.documentElement.clientHeight*3) || (document.body.scrollTop > document.body.clientHeight *2 && document.body.scrollTop < document.body.clientHeight*3)) {
-        link1.style.backgroundColor = "";
-        link1.style.color = "black";
-        link2.style.backgroundColor = accent_color;
-        link2.style.color = "white";
-        link3.style.backgroundColor = "";
-        link3.style.color = "black";
+    else if ((document.documentElement.scrollTop >= document.documentElement.clientHeight *2 - buffer && document.documentElement.scrollTop < document.documentElement.clientHeight*3 - buffer) || (document.body.scrollTop > document.body.clientHeight *2 - buffer && document.body.scrollTop < document.body.clientHeight*3 - buffer)) {
+        setLinkColors(1);
     }
-    else if ((document.documentElement.scrollTop > document.documentElement.clientHeight *3 && document.documentElement.scrollTop < document.documentElement.clientHeight*4) || (document.body.scrollTop > document.body.clientHeight *3 && document.body.scrollTop < document.body.clientHeight*4)) {
-        link1.style.backgroundColor = "";
-        link1.style.color = "black";
-        link2.style.backgroundColor = "";
-        link2.style.color = "black";
-        link3.style.backgroundColor = accent_color;
-        link3.style.color = "white";
+    else if ((document.documentElement.scrollTop >= document.documentElement.clientHeight *3 - buffer && document.documentElement.scrollTop < document.documentElement.clientHeight*4 - buffer) || (document.body.scrollTop > document.body.clientHeight *3 - buffer && document.body.scrollTop < document.body.clientHeight*4 - buffer)) {
+        setLinkColors(2);
     }
     else if (document.documentElement.scrollTop < document.documentElement.clientHeight || document.body.scrollTop < document.body.clientHeight) {
-        link1.style.backgroundColor = "";
-        link1.style.color = "black";
-        link2.style.backgroundColor = "";
-        link2.style.color = "black";
-        link3.style.backgroundColor = "";
-        link3.style.color = "black";
+        setLinkColors(-1);
     }
+}
+
+function setLinkColors(link_no) {
+    switch (link_no) {
+        default:
+            link0.style.backgroundColor = "";
+            link0.style.color = "black";
+            link1.style.backgroundColor = "";
+            link1.style.color = "black";
+            link2.style.backgroundColor = "";
+            link2.style.color = "black";
+            break;
+        case 0:
+            link0.style.backgroundColor = accent_color;
+            link0.style.color = "white";
+            link1.style.backgroundColor = "";
+            link1.style.color = "black";
+            link2.style.backgroundColor = "";
+            link2.style.color = "black";
+            break;
+        case 1:
+            link0.style.backgroundColor = "";
+            link0.style.color = "black";
+            link1.style.backgroundColor = accent_color;
+            link1.style.color = "white";
+            link2.style.backgroundColor = "";
+            link2.style.color = "black";
+            break;
+        case 2:
+            link0.style.backgroundColor = "";
+            link0.style.color = "black";
+            link1.style.backgroundColor = "";
+            link1.style.color = "black";
+            link2.style.backgroundColor = accent_color;
+            link2.style.color = "white";
+            break;
+
+    }
+
 }
 
 function backToTop() {
