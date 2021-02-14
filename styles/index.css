@@ -3,6 +3,7 @@
 html {
     scroll-behavior: smooth;
     overflow-y: scroll;
+    overflow-x: hidden;
     --primary: white;
     --secondary: #cdcdcd;
     --text-light: white;
@@ -15,7 +16,8 @@ body {
     padding: 0;
     background-color: var(--primary);
     color: var(--text-dark);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
 header {
@@ -47,7 +49,7 @@ header a {
 
 }
 
-.name-container {
+.logo-container {
     display: flex;
 }
 
