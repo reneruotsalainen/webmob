@@ -27,6 +27,7 @@ header {
     top: 0;
     min-height: 50px;
     width: 100%;
+    flex-direction: row;
     background-color: var(--primary);
     color: var(--text-dark);
     font-size: medium;
@@ -45,38 +46,35 @@ header a {
     flex-direction: row;
     justify-content: space-between;
     min-height: inherit;
-    align-items: center;
-
 }
 
 .logo-container {
     display: flex;
+    height: inherit;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo {
     height: 30px;
+    display: flex;
 }
 
 
 .navbar-links{
-    display: flex;
+    display: flex;    
     width: 30%;
     justify-content: space-between;
     padding-right: 2vw;
     padding-left: 2vw;
+    align-items: center;
 }
 
 .navbar-links a {
     padding: 5px;
     border-radius: 5px;
     color: var(--text-dark);
-}
-
-
-.icon {
-}
-
-.main-content {
 }
 
 .page {
@@ -101,26 +99,30 @@ header a {
     width: 100%;
 }
 
-.photo-credit {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: xx-small;
-}
 
 
 .landing {
     background: var(--primary-color);
     color: var(--text-light);
-    justify-content: center;
     align-items: center;
-    
+    justify-content: center;
 }
 
-.landing .headline {
+.landing .content-section {
     font-family: 'Raleway', sans-serif;
-    font-size: 5vh;
     font-weight: 400;
     color: --var(--text-light);
     text-shadow: 2px 2px 4px black;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing .headline-top {
+    font-size: 40px;
+}
+.landing .headline-bottom {
+    font-size: 20px;
 }
 
 .landing-bg-img {
@@ -137,6 +139,15 @@ header a {
     background:var(--primary-color);
 }
 
+.page.history {
+    justify-content: space-between;
+}
+
+.photo-credit {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    color: var(--text-dark);
+}
 
 .history-bg-img {
     position: absolute;
@@ -177,7 +188,7 @@ footer {
     position: relative;
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 60px;
     width: 100%;
     background-color: var(--secondary);
     bottom: 0;
@@ -224,17 +235,25 @@ footer {
         padding-right: 200px;
     }
 
+    .hamburger{
+        display: none;
+    }
+    
+    .hamburger-links {
+        display: none;
+    }
+
     .landing-bg-img {
         width: 99vw;
         max-height: 100vh;
     }
     
     .landing-bg-img.desktop {
-        visibility: visible;
+        display: inline;
     }
     
     .landing-bg-img.mobile {
-        visibility: hidden;
+        display: none;
     }
 
     .embedded-yt-vid {
@@ -255,9 +274,49 @@ footer {
     }
 
     .navbar-links{
-        width: 70%;
-        padding-right: 4vw;
-        padding-left: 4vw;
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+        cursor:pointer;
+        flex-direction: column;
+        justify-content: center;
+        margin-right:20px;
+        margin-left:20px;
+        z-index: 1;
+    }
+    
+    .line {
+        width: 20px;
+        height: 2px;
+        background-color: var(--text-dark);
+        margin: 2px;
+    }
+
+    .hamburger-links {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        flex-direction: column;
+        position: fixed;
+        background: var(--primary);
+        width: 0px;
+        height: 100vh;
+        right: 0;
+        justify-content: space-around;
+        display:flex;
+        transition: width .5s;
+    }
+
+    .hamburger-links.open {
+        width: 50%;
+    }
+    
+    .hamburger-links li a {
+        padding: 20px;
+        color: var(--text-dark);
     }
 
     .name-container {
@@ -270,16 +329,16 @@ footer {
     }
 
     .landing-bg-img.desktop {
-        visibility: hidden;
+        display: none;
     }
     
     .landing-bg-img.mobile {
-        visibility: visible;
+        display:flex;
     }
 
     .embedded-yt-vid {
-        width: 320px;
-        height: 180px;
+        width: 90vw;
+        height: 60vw;
     }
 
     .history-bg-img {

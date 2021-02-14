@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./res/favicon.ico" type="image/x-icon">  
+
     <!-- style imports -->
     <link rel="stylesheet" href="./styles/index.css">
     
@@ -27,6 +30,16 @@
                 <a href="#history" id="history-link">history</a>
                 <a href="#distros" id="distros-link">distros</a>
             </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="hamburger-links">
+                <li><a href="#intro" id="intro-link">introduction</a></li>
+                <li><a href="#history" id="history-link">history</a></li>
+                <li><a href="#distros" id="distros-link">distros</a></li>
+            </ul>
         </div>
     </header>
     <div class="main-content">
@@ -34,10 +47,11 @@
         <!-- landing page -->
         <div id="landing" class="page landing">
             <section class="content-section">
-                <p class="headline">Linux, the<p>
+                <p class="headline-top">Linux, <p>
+                <p class="headline-bottom">the open-source platform that runs the web.<p>
             </section>
             <img class="landing-bg-img desktop" src="./res/landing_16_9.png" alt="landing_bg">
-            <img class="landing-bg-img mobile"src="./res/landing_9_16.png" alt="landing_bg">
+            <img class="landing-bg-img mobile"src="./res/landing_mobile.jpg" alt="landing_bg">
         </div>
 
         <!-- introduction page -->
@@ -54,12 +68,15 @@
             <section class="content-section">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae illo maxime qui praesentium beatae sit error facere veniam quod excepturi cum dignissimos at esse, perspiciatis similique neque ipsam quaerat! Non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolor modi explicabo blanditiis doloribus assumenda alias laboriosam, perspiciatis ut nemo eos architecto exercitationem, aliquid ratione ducimus cupiditate, nobis recusandae sit.
             </section>
-            <a href="https://www.facesofopensource.com/linus-torvalds-2/" target="_blank"><p class="photo-credit">Faces of Open Source / Peter Adams</p></a>
+            <a href="https://www.facesofopensource.com/linus-torvalds-2/" target="_blank"><p class="photo-credit">Picture: Faces of Open Source / Peter Adams</p></a>
         </div>
         
         <!-- distros page -->
         <div id="distros" class="page distros">
             <section class="content-section">
+                <div>
+                    <p>There exist a plethora of different distributions that come with the Linux kernel included. Most of these are open-source and not for commercial purposes. One non-open-source Linux distribution is the <a href="https://en.wikipedia.org/wiki/Chrome_OS">ChromeOS</a></a>.</p>
+                </div>
                 <div class="distros-box">
                     <a href="https://archlinux.org/" target="_blank">
                         <div class="distro-item">
