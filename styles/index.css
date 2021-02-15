@@ -91,15 +91,21 @@ header a {
     flex-direction: column;
     align-items: center;
     max-width: 60vw;
-    padding-top: 100px;
     margin-top: 2vh;
     margin-bottom: 2vh;
     background-color: var(--opaque-secondary-color);
-    border-radius: 5px 20px 5px 20px;
     width: 100%;
+    min-height: inherit;
 }
 
-
+.page-title {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    padding-top: 20px;
+    font-size: larger;
+    text-decoration: underline;
+}
 
 .landing {
     background: var(--primary-color);
@@ -134,6 +140,7 @@ header a {
 .intro {
     background: var(--primary-color);
 }
+
 
 .history {
     background:var(--primary-color);
