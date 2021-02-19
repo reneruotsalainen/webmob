@@ -12,6 +12,9 @@ const hamburgerLinks = document.querySelector('.hamburger-links');
 
 const hamburgerLinkList = document.querySelectorAll('.hamburger-links a');
 
+// distroLogos
+const distroLogos = document.querySelectorAll('.distro-logo');
+
 // colors
 const color = "#cdcdcd"
  
@@ -30,6 +33,18 @@ hamburgerLinkList.forEach(link => {
         hamburgerLinks.classList.remove("open");
     })
 });
+
+distroLogos.forEach(logo => {
+    logo.addEventListener('mouseover', () => {
+        logo.classList.add('logohover');
+    })
+})
+
+distroLogos.forEach(logo => {
+    logo.addEventListener('mouseout', () => {
+        logo.classList.remove('logohover');
+    })
+})
 
 document.onscroll = function() {scroll()}
 
